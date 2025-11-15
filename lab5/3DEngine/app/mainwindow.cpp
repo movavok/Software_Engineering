@@ -163,8 +163,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         if(!file.isEmpty()) loadSceneFile(file);
     });
     connect(ui->actionDefault_scene, &QAction::triggered, this, [this]{
-        auto path = findDefaultScenePath();
-        if(!path.isEmpty()) loadSceneFile(path);
+        view->clearTextures();
+        scene.models.clear();
+        scene.lights.clear();
+        view->update();
     });
     connect(ui->actionImport_scene, &QAction::triggered, this, [this]{
         QString path = QFileDialog::getSaveFileName(this, tr("Export Current Scene"), QString(), tr("Scene Files (*.scene);;All Files (*.*)"));
@@ -254,18 +256,24 @@ MainWindow::~MainWindow(){ delete ui; }
 QString MainWindow::findDefaultScenePath() const{
     const QString exeDir = QCoreApplication::applicationDirPath();
     auto resolveIfExists = [](const QString& path) -> QString {
-        QFileInfo fi(QDir::cleanPath(path));
-        return (fi.exists() && fi.isFile()) ? fi.canonicalFilePath() : QString();
+        QFileInfo fi(path);
+        return (fi.exists() && fi.isFile()) ? fi.absoluteFilePath() : QString();
     };
     
-    QString hit = resolveIfExists(QStringLiteral("data/default.scene"));
+    // Try relative to current working directory
+    QString hit = resolveIfExists("data/default.scene");
     if(!hit.isEmpty()) return hit;
+    
+    // Try in exe directory
+    hit = resolveIfExists(exeDir + "/data/default.scene");
+    if(!hit.isEmpty()) return hit;
+    
+    // Try going up from exe directory (for build folders like build/Desktop_*/app/release/)
     QDir d(exeDir);
     for(int i=0;i<6;i++){
-        const QString candidate = d.filePath(QStringLiteral("data/default.scene"));
-        hit = resolveIfExists(candidate);
-        if(!hit.isEmpty()) return hit;
         if(!d.cdUp()) break;
+        hit = resolveIfExists(d.absolutePath() + "/data/default.scene");
+        if(!hit.isEmpty()) return hit;
     }
     return QString();
 }
