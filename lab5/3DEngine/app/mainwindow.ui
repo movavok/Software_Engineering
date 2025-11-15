@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>3D Engine Viewer</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{background:#1b1f24;color:#e0e6ed;}
+QMainWindow{background:#1b1f24;}
+QMenuBar{background:#14181c;color:#e0e6ed;}
+QMenuBar::item{padding:4px 10px;}
+QMenuBar::item:selected{background:#28313a;}
+QMenu{background:#1f252b;color:#e0e6ed;border:1px solid #2b333d;}
+QMenu::item{padding:6px 16px;}
+QMenu::item:selected{background:#2d3640;}
+QMenu::separator{height:1px;background:#2b333d;margin:6px 4px;}
+QToolTip{background-color:#28313a;color:#e0e6ed;border:1px solid #2b333d;}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="sceneViewPlaceholder" native="true"/>
+    </item>
+   </layout>
+   <widget class="QLabel" name="labelFPS">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>120</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding:4px;border-radius:4px;color:#e0e6ed;</string>
+    </property>
+    <property name="text">
+     <string>FPS: 0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelZoom">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>38</y>
+      <width>120</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Consolas</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">padding:4px;border-radius:4px;color:#e0e6ed;</string>
+    </property>
+    <property name="text">
+     <string>Zoom: x1.0</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menuLights">
+    <property name="title">
+     <string>Lights</string>
+    </property>
+    <addaction name="actionPlace_here"/>
+    <addaction name="actionLight_color"/>
+    <addaction name="actionIntensity"/>
+   </widget>
+   <widget class="QMenu" name="menuModels">
+    <property name="title">
+     <string>Models</string>
+    </property>
+    <addaction name="actionChange_texture"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Scene</string>
+    </property>
+    <addaction name="actionLoad_scene"/>
+    <addaction name="actionImport_scene"/>
+    <addaction name="actionDefault_scene"/>
+    <addaction name="actionReset_camera"/>
+   </widget>
+   <widget class="QMenu" name="menuSamples">
+    <property name="title">
+     <string>Samples</string>
+    </property>
+    <addaction name="actionTriangle"/>
+    <addaction name="actionCube"/>
+    <addaction name="actionPiramid"/>
+    <addaction name="actionSphere"/>
+   </widget>
+   <addaction name="menuSamples"/>
+   <addaction name="menuFile"/>
+   <addaction name="menuModels"/>
+   <addaction name="menuLights"/>
+  </widget>
+  <action name="actionOpenScene">
+   <property name="text">
+    <string>Open Scene...</string>
+   </property>
+  </action>
+  <action name="actionDefaultScene">
+   <property name="text">
+    <string>Load Default Scene</string>
+   </property>
+  </action>
+  <action name="actionResetCamera">
+   <property name="text">
+    <string>Reset Camera</string>
+   </property>
+  </action>
+  <action name="actionLight_color">
+   <property name="text">
+    <string>Color</string>
+   </property>
+  </action>
+  <action name="actionIntensity">
+   <property name="text">
+    <string>Intensity</string>
+   </property>
+  </action>
+  <action name="actionPlace_here">
+   <property name="text">
+    <string>Place here</string>
+   </property>
+  </action>
+  <action name="actionChange_texture">
+   <property name="text">
+    <string>Change texture</string>
+   </property>
+  </action>
+  <action name="actionLoad_scene">
+   <property name="text">
+    <string>Load scene</string>
+   </property>
+  </action>
+  <action name="actionDefault_scene">
+   <property name="text">
+    <string>Default scene</string>
+   </property>
+  </action>
+  <action name="actionReset_camera">
+   <property name="text">
+    <string>Reset camera</string>
+   </property>
+  </action>
+  <action name="actionCube">
+   <property name="text">
+    <string>Cube</string>
+   </property>
+  </action>
+  <action name="actionPiramid">
+   <property name="text">
+    <string>Pyramid</string>
+   </property>
+  </action>
+  <action name="actionTriangle">
+   <property name="text">
+    <string>Triangle</string>
+   </property>
+  </action>
+  <action name="actionSphere">
+   <property name="text">
+    <string>Sphere</string>
+   </property>
+  </action>
+  <action name="actionImport_scene">
+   <property name="text">
+    <string>Import scene</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
