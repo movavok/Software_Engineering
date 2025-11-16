@@ -147,10 +147,17 @@ QToolTip{background-color:#28313a;color:#e0e6ed;border:1px solid #2b333d;}</stri
     <addaction name="actionPiramid"/>
     <addaction name="actionSphere"/>
    </widget>
+   <widget class="QMenu" name="menuDocumentation">
+    <property name="title">
+     <string>Documentation</string>
+    </property>
+    <addaction name="actionUser_Guide"/>
+   </widget>
    <addaction name="menuSamples"/>
    <addaction name="menuFile"/>
    <addaction name="menuModels"/>
    <addaction name="menuLights"/>
+   <addaction name="menuDocumentation"/>
   </widget>
   <action name="actionOpenScene">
    <property name="text">
@@ -225,6 +232,11 @@ QToolTip{background-color:#28313a;color:#e0e6ed;border:1px solid #2b333d;}</stri
   <action name="actionImport_scene">
    <property name="text">
     <string>Import scene</string>
+   </property>
+  </action>
+  <action name="actionUser_Guide">
+   <property name="text">
+    <string>User Guide</string>
    </property>
   </action>
  </widget>

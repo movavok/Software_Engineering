@@ -11,6 +11,8 @@
 #include <QMenu>
 #include <QAction>
 #include <QtMath>
+#include <QDesktopServices>
+#include <QUrl>
 
 namespace {
 struct Basis { QVector3D f, r, u; };
@@ -243,6 +245,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         }
     };
     connectSamples();
+
+    // Open User Guide (.chm)
+    connect(ui->actionUser_Guide, &QAction::triggered, this, [this]{
+        const QString path = findUserGuidePath();
+        if(!path.isEmpty()){
+            QDesktopServices::openUrl(QUrl::fromLocalFile(path));
+        } else {
+            const QString exeDir = QCoreApplication::applicationDirPath();
+            QMessageBox::warning(this, tr("User Guide not found"),
+                tr("Place '3DEngineViewer.chm' next to the executable.\n\nExpected location:\n%1")
+                .arg(QDir(exeDir).filePath("3DEngineViewer.chm")));
+        }
+    });
 }
 
 void MainWindow::loadSceneFile(const QString& path){ 
@@ -276,6 +291,13 @@ QString MainWindow::findDefaultScenePath() const{
         if(!hit.isEmpty()) return hit;
     }
     return QString();
+}
+
+QString MainWindow::findUserGuidePath() const{
+    const QString exeDir = QCoreApplication::applicationDirPath();
+    const QString candidate = QDir(exeDir).filePath(QStringLiteral("3DEngineViewer.chm"));
+    QFileInfo fi(candidate);
+    return (fi.exists() && fi.isFile()) ? fi.absoluteFilePath() : QString();
 }
 
 void MainWindow::updateFPSLabel(int fps) {

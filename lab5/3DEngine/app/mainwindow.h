@@ -22,6 +22,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void loadSceneFile(const QString& path);
+    QString findUserGuidePath() const;
 private:
     QString findDefaultScenePath() const;
 private:
