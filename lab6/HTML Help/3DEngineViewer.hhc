@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+</HEAD>
+<BODY>
+<OBJECT type="text/site properties">
+	<param name="ExWindow Styles" value="0x200">
+	<param name="Window Styles" value="0x800025">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Зміст">
+		<param name="Local" value="index.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="1. Вступ">
+		<param name="Local" value="intro.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="2. Огляд програми">
+		<param name="Local" value="overview.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="3. Встановлення">
+		<param name="Local" value="install.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="4. Використання програми">
+		<param name="Local" value="usage.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="5. Повідомлення про помилки">
+		<param name="Local" value="errors.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="6. Вирішення типових проблем">
+		<param name="Local" value="troubleshooting.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="7. Технічна підтримка">
+		<param name="Local" value="support.html">
+		</OBJECT>
+</UL>
+</BODY>
+</HTML>

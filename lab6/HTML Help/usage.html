@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>4. Використання — 3D Engine Viewer</title>
+  <link rel="stylesheet" href="styles-chm.css" />
+</head>
+<body>
+<div class="wrapper">
+  <div class="nav">
+    <span class="title">3D Engine Viewer — Довідка</span>
+    <a href="index.html">Зміст</a>
+    <a href="intro.html">1. Вступ</a>
+    <a href="overview.html">2. Огляд</a>
+    <a href="install.html">3. Встановлення</a>
+    <a href="usage.html">4. Використання</a>
+    <a href="errors.html">5. Помилки</a>
+    <a href="troubleshooting.html">6. Проблеми</a>
+    <a href="support.html">7. Підтримка</a>
+  </div>
+
+  <div class="header"><div class="header-inner"><h1>4. Використання програми</h1></div></div>
+  <div class="container">
+    <h2>4.1. Запуск програми</h2>
+    <ul>
+      <li>якщо сцена порожня — автоматично додається <i>Triangle</i>;</li>
+      <li>камера встановлюється в стандартну позицію: <code>(4, 3, 4)</code>, <code>yaw = −135°</code>, <code>pitch = −20°</code>, <code>zoom = 60</code>.</li>
+    </ul>
+
+    <h2>4.2. Основні дії</h2>
+    <h3>Маніпуляції камерою</h3>
+    <ul>
+      <li>Поворот: <kbd>ліва кнопка</kbd> + рух</li>
+      <li>Панорамування: <kbd>права кнопка</kbd> + рух</li>
+      <li>Рух по осі: <kbd>колесо натиснуте</kbd> + рух</li>
+      <li>Зміна наближення: <kbd>колесо прокрутки</kbd></li>
+    </ul>
+
+    <h3>Операції над сценою</h3>
+    <ul>
+      <li>Додати модель: <i>Samples → Triangle/Cube/Pyramid/Sphere</i></li>
+      <li>Змінити колір світла: <i>Lights → Color</i></li>
+      <li>Змінити інтенсивність: <i>Lights → Intensity (0–10)</i></li>
+      <li>Додати світло: <i>Lights → Place here</i></li>
+      <li>Змінити текстуру: <i>Models → Change texture</i></li>
+      <li>Завантажити сцену: <i>Scene → Load scene</i></li>
+      <li>Зберегти сцену: <i>Scene → Import scene</i></li>
+      <li>Очистити сцену: <i>Scene → Default scene</i></li>
+      <li>Скинути камеру: <i>Scene → Reset camera</i></li>
+    </ul>
+
+    <h2>4.3. Типові сценарії роботи</h2>
+    <h3>Сценарій 1: «Очистити і зібрати тестову сцену»</h3>
+    <ol>
+      <li>Scene → Default scene</li>
+      <li>Samples → Cube, Pyramid, Sphere</li>
+      <li>Lights → Intensity (напр. 2.5)</li>
+      <li>Lights → Place here</li>
+      <li>Models → Change texture</li>
+    </ol>
+
+    <h3>Сценарій 2: «Підготувати сцену та зберегти»</h3>
+    <ol>
+      <li>Scene → Load scene (або зібрати вручну)</li>
+      <li>Налаштувати освітлення</li>
+      <li>Scene → Import scene</li>
+    </ol>
+
+    <h3>Сценарій 3: «Налаштувати камеру для огляду»</h3>
+    <ol>
+      <li>Поворот — лівою кнопкою</li>
+      <li>Панорамування — правою</li>
+      <li>Рух по осі — колесо натиснуте + рух</li>
+      <li>Zoom — колесо</li>
+      <li>Scene → Reset camera при потребі</li>
+    </ol>
+
+    <h3>Сценарій 4: «Додати кілька джерел світла»</h3>
+    <ol>
+      <li>Розмістити камеру в потрібну позицію</li>
+      <li>Lights → Color</li>
+      <li>Lights → Place here</li>
+      <li>Повторити для інших точок</li>
+    </ol>
+  </div>
+
+  <div class="footer">© 2025 3D Engine Viewer • ЛР5</div>
+</div>
+</body>
+</html>

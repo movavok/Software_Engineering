@@ -1,0 +1,46 @@
+/* CHM-safe stylesheet: avoids CSS3, flex, variables, gradients, sticky */
+/* Target: HTML Help Workshop / CHM (IE/Trident legacy) */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #e6e8ee;
+  background: #0b1020; /* solid background only */
+}
+
+.wrapper { width: auto; margin: 0; padding: 0; }
+.header { background: #10183a; border-bottom: 1px solid #223054; }
+.header-inner { padding: 16px; }
+
+/* Simple top navigation (no sticky, no flex) */
+.nav { border-bottom: 1px solid #223054; background: #0e1533; padding: 8px 12px; }
+.nav a { color: #b8bfd3; text-decoration: none; margin-right: 8px; padding: 4px 6px; }
+.nav a:hover { background: #101837; color: #fff; }
+.nav .title { color: #fff; font-weight: bold; margin-right: 10px; }
+
+.container { padding: 16px; }
+.panel, .toc, .note, pre {
+  background: #0e1533;
+  border: 1px solid #223054;
+}
+.toc { padding: 12px; }
+.panel { padding: 12px; }
+.note { padding: 8px; border-left: 3px solid #6993ff; }
+
+h1 { font-size: 20px; margin: 0 0 4px 0; }
+h2 { font-size: 18px; margin: 16px 0 8px 0; }
+h3 { font-size: 15px; margin: 12px 0 6px 0; color: #8fd3ff; }
+
+p { margin: 8px 0; }
+ul, ol { margin: 6px 0 10px 20px; }
+li { margin: 3px 0; }
+.summary { color: #b8bfd3; }
+
+kbd { border: 1px solid #223054; padding: 1px 4px; background: #0f1944; font-family: Courier New, monospace; font-size: 12px; color: #8fd3ff; }
+code, pre { font-family: Courier New, monospace; font-size: 13px; color: #cfe1ff; }
+pre { padding: 10px; overflow: auto; }
+
+.footer { border-top: 1px solid #223054; color: #b8bfd3; padding: 10px 16px; margin-top: 16px; }

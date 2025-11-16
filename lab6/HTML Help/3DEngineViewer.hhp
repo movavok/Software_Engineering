@@ -1,0 +1,20 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=3DEngineViewer.chm
+Contents file=3DEngineViewer.hhc
+Default topic=index.html
+Display compile progress=No
+Full-text search=Yes
+Language=0x422 Ukrainian (Ukraine)
+Title=3D Engine Viewer — Довідка
+
+[FILES]
+index.html
+intro.html
+overview.html
+install.html
+usage.html
+errors.html
+troubleshooting.html
+support.html
+styles-chm.css

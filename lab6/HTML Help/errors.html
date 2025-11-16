@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>5. Помилки — 3D Engine Viewer</title>
+  <link rel="stylesheet" href="styles-chm.css" />
+</head>
+<body>
+<div class="wrapper">
+  <div class="nav">
+    <span class="title">3D Engine Viewer — Довідка</span>
+    <a href="index.html">Зміст</a>
+    <a href="intro.html">1. Вступ</a>
+    <a href="overview.html">2. Огляд</a>
+    <a href="install.html">3. Встановлення</a>
+    <a href="usage.html">4. Використання</a>
+    <a href="errors.html">5. Помилки</a>
+    <a href="troubleshooting.html">6. Проблеми</a>
+    <a href="support.html">7. Підтримка</a>
+  </div>
+
+  <div class="header"><div class="header-inner"><h1>5. Повідомлення про помилки</h1></div></div>
+  <div class="container">
+    <h2>Приклади можливих повідомлень</h2>
+    <ul>
+      <li><b>“Failed to save scene file.”</b><br /><span class="summary">Немає доступу до шляху при експорті (кириличні символи в шляху).</span></li>
+      <li><b>Порожня сцена після завантаження</b><br /><span class="summary">Файл містить <code>MODELS 0</code> та <code>LIGHTS 0</code>.</span></li>
+    </ul>
+
+    <h2>Формат файлу .scene (спрощено)</h2>
+    <pre>CAMERA x y z yaw pitch fov
+LIGHTS N
+LIGHT t px py pz dx dy dz r g b a intensity
+MODELS M
+NAME &lt;ім'я&gt;
+TEXTURE &lt;шлях або - &gt;
+MATERIAL r g b a
+MESHES K
+VERTICES V
+v x y z
+INDICES I
+i index
+</pre>
+  </div>
+
+  <div class="footer">© 2025 3D Engine Viewer • ЛР5</div>
+</div>
+</body>
+</html>
