@@ -36,8 +36,7 @@ ChangesAssociations=yes
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 LicenseFile=C:\Repositories\Software Engineering\Software_Engineering\lab5\3DEngine\LICENSE.txt
-InfoBeforeFile=C:\Repositories\Software Engineering\Software_Engineering\lab6\HTML Help\index.html
-InfoAfterFile=C:\Repositories\Software Engineering\Software_Engineering\lab6\HTML Help\index.html
+
 ; Uncomment the following line to run in non administrative install mode (install for current user only).
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
@@ -71,5 +70,6 @@ Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]
+Filename: "{app}\3DEngineViewer.chm"; Description: "Open Help"; Flags: shellexec postinstall
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
