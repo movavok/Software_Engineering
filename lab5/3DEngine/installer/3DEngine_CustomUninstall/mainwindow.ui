@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#centralwidget {
+      background-color: #F6F7FB;
+      font-size: 11pt;
+    }
+
+    QGroupBox {
+      background-color: #FFFFFF;
+      border: 1px solid #D7DBE7;
+      border-radius: 10px;
+      margin-top: 18px;
+      font-weight: 700;
+    }
+
+    QGroupBox QWidget {
+      font-weight: 400;
+    }
+
+    QGroupBox::title {
+      subcontrol-origin: margin;
+      subcontrol-position: top left;
+      left: 12px;
+      padding: 0 10px;
+      color: #111827;
+      font-weight: 800;
+      background-color: #FFFFFF;
+    }
+
+    QLabel#l_finishTitle {
+      font-size: 14pt;
+      font-weight: 700;
+    }
+
+    QLabel {
+      color: #111827;
+      font-weight: 400;
+    }
+
+    QLabel#l_uninstallStatus {
+      color: #4B5563;
+    }
+
+    QLineEdit,
+    QTextBrowser {
+      background-color: #FFFFFF;
+      border: 1px solid #D7DBE7;
+      border-radius: 8px;
+      padding: 6px 8px;
+    }
+
+    QTextBrowser {
+      font-family: &quot;Cascadia Mono&quot;, &quot;Consolas&quot;, &quot;Courier New&quot;;
+    }
+
+    QLineEdit:focus,
+    QTextBrowser:focus {
+      border: 1px solid #9AA7C7;
+    }
+
+    QPushButton {
+      background-color: #FFFFFF;
+      border: 1px solid #CFD6EA;
+      border-radius: 8px;
+      padding: 6px 14px;
+    }
+
+    QPushButton:hover {
+      background-color: #F0F3FA;
+    }
+
+    QPushButton:pressed {
+      background-color: #E6EBF7;
+    }
+
+    QPushButton:disabled {
+      color: #9CA3AF;
+      background-color: #F3F4F6;
+      border-color: #E5E7EB;
+    }
+
+    QPushButton#b_next {
+      background-color: #EF4444;
+      border: 1px solid #EF4444;
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    QPushButton#b_next:hover {
+      background-color: #DC2626;
+      border-color: #DC2626;
+    }
+
+    QPushButton#b_next:pressed {
+      background-color: #B91C1C;
+      border-color: #B91C1C;
+    }
+
+    QPushButton#b_next:disabled {
+      background-color: #FCA5A5;
+      border-color: #FCA5A5;
+      color: #FFFFFF;
+    }
+
+    QProgressBar {
+      background-color: #FFFFFF;
+      border: 1px solid #D7DBE7;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    QProgressBar::chunk {
+      border-radius: 7px;
+      background-color: #93C5FD;
+    }</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_root">
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="pageWelcome">
+       <layout class="QVBoxLayout" name="verticalLayout_welcome">
+        <item>
+         <widget class="QGroupBox" name="gb_programInfo">
+          <property name="title">
+           <string>Program Info</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_program">
+           <item>
+            <widget class="QLabel" name="l_programName">
+             <property name="text">
+              <string>3DEngineViewer</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="l_programVersion">
+             <property name="text">
+              <string>Version 1.0</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_dev">
+             <item>
+              <widget class="QLabel" name="l_developer">
+               <property name="text">
+                <string>Developer: </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="l_developerName">
+               <property name="text">
+                <string>Pavlo Kurishchenko</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_build">
+             <item>
+              <widget class="QLabel" name="l_buildDate">
+               <property name="text">
+                <string>Build date: </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="l_buildDateValue">
+               <property name="text">
+                <string>00.00.0000</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QLabel" name="l_installedStatus">
+             <property name="text">
+              <string>Installed components detected: checking...</string>
+             </property>
+            </widget>
+           </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_reportEmail">
+              <item>
+               <widget class="QLabel" name="l_reportEmail">
+                <property name="text">
+                 <string>Email for report (optional):</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="le_reportEmail">
+                <property name="placeholderText">
+                 <string>name@example.com</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageUninstall">
+       <layout class="QVBoxLayout" name="verticalLayout_uninstall">
+        <item>
+         <widget class="QGroupBox" name="gb_uninstalling">
+          <property name="title">
+           <string>Uninstalling</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_uninstall_box">
+           <item>
+            <widget class="QLabel" name="l_uninstallStatus">
+             <property name="text">
+              <string>Preparing...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="pb_uninstallProgress">
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTextBrowser" name="tb_steps"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageFinish">
+       <layout class="QVBoxLayout" name="verticalLayout_finish">
+        <item>
+         <widget class="QGroupBox" name="gb_finish">
+          <property name="title">
+           <string>Finish</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_finish_box">
+           <item>
+            <widget class="QLabel" name="l_finishTitle">
+             <property name="text">
+              <string>Uninstallation completed</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="gridLayout_finish">
+             <item row="0" column="0">
+              <widget class="QLabel" name="l_finishPath">
+               <property name="text">
+                <string>Install path:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="l_finishPathValue">
+               <property name="text">
+                <string>-</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="l_finishDate">
+               <property name="text">
+                <string>Install date:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLabel" name="l_finishDateValue">
+               <property name="text">
+                <string>-</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="l_finishTime">
+               <property name="text">
+                <string>Install time:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLabel" name="l_finishTimeValue">
+               <property name="text">
+                <string>-</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="l_finishSerial">
+               <property name="text">
+                <string>Serial:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="l_finishSerialValue">
+               <property name="text">
+                <string>-</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_nav">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="b_back">
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="b_next">
+        <property name="text">
+         <string>Next</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
